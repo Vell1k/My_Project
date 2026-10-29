@@ -6,6 +6,7 @@ var logger = require('morgan');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://127.0.0.1:27017/rock2026');
 var session = require('express-session');
+var MongoStore = require('connect-mongo');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -29,6 +30,7 @@ app.use(session({
   proxy: true,
   resave: true,
   saveUninitialized: true,
+  store: MongoStore.create({ mongoUrl: 'mongodb://127.0.0.1:27017/rock2026' })
 }));
 
 app.use('/', indexRouter);

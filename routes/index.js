@@ -2,7 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function(req, res, next) {
-  res.cookie('greeting', 'Hi!!!').render('index', { title: 'ROCK' });
+  req.session.greeting = 'Hi!!!';
+  res.render('index', { title: 'ROCK' });
 });
 
 module.exports = router;
