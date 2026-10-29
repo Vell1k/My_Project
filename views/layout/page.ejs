@@ -19,18 +19,9 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Группы</a>
           <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="/bands/arcticmonkeys">Arctic Monkeys</a></li>
-          <li><a class="dropdown-item" href="/bands/scorpions">Scorpions</a></li>
-          <li><a class="dropdown-item" href="/bands/nirvana">Nirvana</a></li>
-          <li><a class="dropdown-item" href="/bands/acdc">AC/DC</a></li>
-          <li><a class="dropdown-item" href="/bands/rammstein">Rammstein</a></li>
-          <li><a class="dropdown-item" href="/bands/maneskin">Måneskin</a></li>
-          <li><a class="dropdown-item" href="/bands/5sos">5 Seconds of Summer</a></li>
-          <li><a class="dropdown-item" href="/bands/aria">Ария</a></li>
-          <li><a class="dropdown-item" href="/bands/linkinpark">Linkin Park</a></li>
-          <li><a class="dropdown-item" href="/bands/imaginedragons">Imagine Dragons</a></li>
-          <li><a class="dropdown-item" href="/bands/kiss">Kiss</a></li>
-          <li><a class="dropdown-item" href="/bands/metallica">Metallica</a></li>
+          <% if (typeof nav == 'object' && nav) { nav.forEach(function(item) { %>
+            <li><a class="dropdown-item" href="/bands/<%= item.nick %>"><%= item.title %></a></li>
+          <% }) } %>
           </ul>
         </li>
       </ul>
