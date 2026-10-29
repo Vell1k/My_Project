@@ -1,0 +1,25 @@
+<% layout('./layout/page.ejs') %>
+
+<div class="container">
+  <h1>Регистрация и вход</h1>
+  <p>Введите имя пользователя и пароль, если такого пользователя нет, то он будет создан.</p>
+  <form>
+    <div class="mb-3 row">
+      <label for="username" class="col-sm-2 col-form-label">Имя</label>
+      <div class="col-sm-5">
+        <input id="username" class="form-control" type="text" placeholder="Введите имя" required />
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label for="password" class="col-sm-2 col-form-label">Пароль</label>
+      <div class="col-sm-5">
+        <input id="password" class="form-control" type="password" placeholder="Введите пароль" required />
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <div class="offset-sm-2 col-sm-5">
+        <input class="btn btn-primary" type="submit" value="Войти" />
+      </div>
+    </div>
+  </form>
+</div>
