@@ -31,4 +31,10 @@ router.post('/logreg', async function(req, res, next) {
   }
 });
 
+router.post('/logout', function(req, res, next) {
+  req.session.destroy(function() {
+    res.redirect('/');
+  });
+});
+
 module.exports = router;
