@@ -1,13 +1,15 @@
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://127.0.0.1:27017/testMongoose2026');
 
-var schema = mongoose.Schema({ name: String });
+var Band = require('./models/band.js').Band;
 
-schema.methods.play = function() {
-  console.log(this.name + ' сыграли рок');
-};
+var band = new Band({
+  title: 'Nirvana',
+  nick: 'nirvana'
+});
 
-const Band = mongoose.model('Band', schema);
-
-const band = new Band({ name: 'Nirvana' });
-band.save().then(() => band.play());
+band
+  .save()
+  .then(() => console.log('Сохранено'))
+  .catch(console.error)
+  .finally(() => mongoose.disconnect());
